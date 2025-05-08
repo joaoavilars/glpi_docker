@@ -13,11 +13,11 @@ services:
       - glpi_db_data:/var/lib/mysql
 
   glpi:
-    image: diouxx/glpi
+    build: .
     container_name: glpi-app
     restart: always
     ports:
-      - "8080:80"
+      - "8081:80"
     environment:
       TIMEZONE: America/Sao_Paulo
     volumes:
@@ -28,3 +28,4 @@ services:
 volumes:
   glpi_db_data:
   glpi_app_data:
+
